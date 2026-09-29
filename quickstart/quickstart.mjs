@@ -22,8 +22,12 @@ async function mcpCall(name, args) {
 }
 
 // 1) No key: live catalog size
-const stats = await getJson("/api/v1/public/catalog-stats/");
-console.log(`1) ${stats.fresh.offers_with_gtin} fresh offers with GTIN in ${stats.fresh.countries} markets`);
+try {
+  const stats = await getJson("/api/v1/public/catalog-stats/");
+  console.log(`1) ${stats.fresh.offers_with_gtin} fresh offers with GTIN in ${stats.fresh.countries} markets`);
+} catch {
+  console.log("1) Catalog stats are refreshing; skipping to step 2");
+}
 
 // 2) No key: a sample product (no tracked link)
 const sample = await getJson("/api/v1/public/catalog-sample/", { params: { country: "DE" } });

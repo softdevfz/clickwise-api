@@ -20,8 +20,11 @@ def get_json(path, params=None, key=None):
         with urllib.request.urlopen(urllib.request.Request(url, headers=headers), timeout=60) as res:
             return json.load(res)
     except urllib.error.HTTPError as e:
-        err = json.load(e).get("error", {})
-        sys.exit(f"{e.code} {err.get('code')}: {err.get('message')} (request {err.get('request_id')})")
+        try:
+            err = json.load(e).get("error", {})
+        except ValueError:
+            err = {}
+        raise RuntimeError(f"{e.code} {err.get('code')}: {err.get('message')} (request {err.get('request_id')})") from None
 
 
 def mcp_call(name, arguments):
@@ -32,8 +35,11 @@ def mcp_call(name, arguments):
 
 
 # 1) No key: live catalog size
-fresh = get_json("/api/v1/public/catalog-stats/")["fresh"]
-print(f"1) {fresh['offers_with_gtin']} fresh offers with GTIN in {fresh['countries']} markets")
+try:
+    fresh = get_json("/api/v1/public/catalog-stats/")["fresh"]
+    print(f"1) {fresh['offers_with_gtin']} fresh offers with GTIN in {fresh['countries']} markets")
+except RuntimeError:
+    print("1) Catalog stats are refreshing; skipping to step 2")
 
 # 2) No key: a sample product (no tracked link)
 first = get_json("/api/v1/public/catalog-sample/", {"country": "DE"})["products"][0]
@@ -47,10 +53,13 @@ if not KEY:
     print("Set CLICKWISE_API_KEY (https://partners.clickwise.net/developers/) to run steps 4-5.")
     sys.exit(0)
 
-# 4) With key: search products and get YOUR tracked links
-for p in get_json("/api/v1/publisher/products/", {"q": "sneaker", "country": "DE", "limit": 3}, KEY)["products"]:
-    print(f"4) {p['gtin']} {p['title']} {p['price']} {p['currency']} -> {p['url']}")
+try:
+    # 4) With key: search products and get YOUR tracked links
+    for p in get_json("/api/v1/publisher/products/", {"q": "sneaker", "country": "DE", "limit": 3}, KEY)["products"]:
+        print(f"4) {p['gtin']} {p['title']} {p['price']} {p['currency']} -> {p['url']}")
 
-# 5) With key: refresh the sample product by GTIN (omitted if your key cannot sell it)
-products = get_json("/api/v1/publisher/products/lookup/", {"gtins": first["gtin"], "country": "DE"}, KEY)["products"]
-print(f"5) {products[0]['url']}" if products else "5) That GTIN is not available for your key; try one from step 4.")
+    # 5) With key: refresh the sample product by GTIN (omitted if your key cannot sell it)
+    products = get_json("/api/v1/publisher/products/lookup/", {"gtins": first["gtin"], "country": "DE"}, KEY)["products"]
+    print(f"5) {products[0]['url']}" if products else "5) That GTIN is not available for your key; try one from step 4.")
+except RuntimeError as e:
+    sys.exit(str(e))

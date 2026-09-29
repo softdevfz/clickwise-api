@@ -5,7 +5,8 @@ set -e
 BASE=https://partners.clickwise.net
 
 echo "1) Live catalog size (no key)"
-curl -s "$BASE/api/v1/public/catalog-stats/" | python3 -c 'import json,sys; d=json.load(sys.stdin)["fresh"]; print(d["offers_with_gtin"], "fresh offers with GTIN,", d["countries"], "markets,", d["brands"], "brands")'
+curl -sf "$BASE/api/v1/public/catalog-stats/" | python3 -c 'import json,sys; d=json.load(sys.stdin)["fresh"]; print(d["offers_with_gtin"], "fresh offers with GTIN,", d["countries"], "markets,", d["brands"], "brands")' 2>/dev/null \
+  || echo "   (catalog stats are refreshing; skip to step 2)"
 
 echo "2) Sample products in one market (no key; no tracked links)"
 curl -s "$BASE/api/v1/public/catalog-sample/?country=DE" | python3 -c 'import json,sys; p=json.load(sys.stdin)["products"][0]; print(p["gtin"], "|", p["name"], "|", p["price"], p["currency"])'
