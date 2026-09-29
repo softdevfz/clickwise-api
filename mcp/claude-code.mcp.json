@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "clickwise": {
+      "type": "http",
+      "url": "https://partners.clickwise.net/api/v1/mcp",
+      "headers": {
+        "X-API-Key": "${CLICKWISE_API_KEY}"
+      }
+    }
+  }
+}

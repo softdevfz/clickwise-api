@@ -1,0 +1,13 @@
+{
+  "name": "@clickwise/api",
+  "version": "0.1.0",
+  "description": "Thin, dependency-free TypeScript client for the Clickwise Publisher API (generated from its OpenAPI 3.1).",
+  "license": "MIT",
+  "type": "module",
+  "main": "clickwise.ts",
+  "types": "clickwise.ts",
+  "files": ["clickwise.ts"],
+  "repository": { "type": "git", "url": "https://github.com/softdevfz/clickwise-api", "directory": "clients/typescript" },
+  "homepage": "https://partners.clickwise.net/developers/",
+  "keywords": ["clickwise", "affiliate", "gtin", "product-catalog", "affiliate-links", "openapi"]
+}

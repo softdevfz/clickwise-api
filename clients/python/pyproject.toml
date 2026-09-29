@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "clickwise"
+version = "0.1.0"
+description = "Thin, dependency-free Python client for the Clickwise Publisher API (generated from its OpenAPI 3.1)."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.8"
+keywords = ["clickwise", "affiliate", "gtin", "product-catalog", "affiliate-links", "openapi"]
+
+[project.urls]
+Homepage = "https://partners.clickwise.net/developers/"
+Source = "https://github.com/softdevfz/clickwise-api"
+
+[tool.setuptools]
+packages = ["clickwise"]

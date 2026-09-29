@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "clickwise": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://partners.clickwise.net/api/v1/mcp",
+        "--header",
+        "X-API-Key:${CLICKWISE_API_KEY}"
+      ],
+      "env": {
+        "CLICKWISE_API_KEY": "YOUR_CLICKWISE_API_KEY"
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "clickwise-api-key",
+      "description": "Clickwise publisher API key (leave empty for public tools only)",
+      "password": true
+    }
+  ],
+  "servers": {
+    "clickwise": {
+      "type": "http",
+      "url": "https://partners.clickwise.net/api/v1/mcp",
+      "headers": {
+        "X-API-Key": "${input:clickwise-api-key}"
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+# Netlify deploys the affiliate store template (Deploy to Netlify button).
+[build]
+  base = "templates/affiliate-store"
+  command = "npm run build"
+  publish = ".next"

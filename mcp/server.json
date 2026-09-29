@@ -1,0 +1,34 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "net.clickwise/mcp",
+  "title": "Clickwise Affiliate Network",
+  "description": "Search GTIN products, mint tracked affiliate links, find affiliate programs and deals.",
+  "version": "1.4.0",
+  "websiteUrl": "https://partners.clickwise.net/developers/",
+  "repository": {
+    "url": "https://github.com/softdevfz/clickwise-api",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://partners.clickwise.net/api/v1/mcp",
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "description": "Clickwise publisher API key (https://partners.clickwise.net/developers/). Optional: program discovery, deals, catalog stats and instant tracked links work without it; product search, feeds, your links and reports need it.",
+          "isRequired": false,
+          "isSecret": true
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "publisher": "SOFT DEV FZ LLC / Clickwise",
+      "openapi": "https://partners.clickwise.net/api/v1/publisher/openapi.json",
+      "llmsTxt": "https://partners.clickwise.net/llms.txt",
+      "privacyPolicyUrl": "https://partners.clickwise.net/en/privacy/"
+    }
+  }
+}
