@@ -2,7 +2,7 @@
 
 One file, [`clickwise.ts`](clickwise.ts), no dependencies, generated from the OpenAPI. Works in Node 18+, Bun, Deno, Next.js route handlers and edge functions: anywhere with `fetch`. **Server-side only**: the key must not reach a browser.
 
-Copy the file into your project (for example `lib/clickwise.ts`), then:
+Copy the file into your project (for example `lib/clickwise.ts`); an npm package, `@clickwise/api`, is on the way. Then:
 
 ```ts
 import { Clickwise, ClickwiseError } from "./lib/clickwise";
@@ -24,4 +24,4 @@ try {
 }
 ```
 
-Every method maps to one operation in the [OpenAPI](../../openapi/openapi.json): `getMe`, `searchProducts`, `lookupProducts`, `listPrograms`, `listJoinablePrograms`, `applyToProgram`, `listLinks`, `createLink`, `createLinksBatch`, `listConversions`, `getReport`, `listClicks`, `getPostback`, `testPostback`, `listPostbackDeliveries` (plus `setPostback` and `rotatePostbackSecret`, which answer 403 to API keys: set those in the portal). Regenerate with `python3 clients/generate.py`.
+Every method maps to one operation in the [OpenAPI](../../openapi/openapi.json): `getMe`, `searchProducts`, `lookupProducts`, `listPrograms`, `listJoinablePrograms`, `applyToProgram`, `listLinks`, `createLink`, `createLinksBatch`, `listConversions`, `getReport`, `listClicks`, `getPostback`, `testPostback`, `listPostbackDeliveries` (plus `setPostback` and `rotatePostbackSecret`, which answer 403 to API keys: set those in the portal). Regenerate with `python3 clients/generate.py`; `npm run build` emits `dist/` (ESM + `.d.ts`).
