@@ -1,0 +1,112 @@
+{
+  "name": "Clickwise: AI agent with the Clickwise MCP server",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "5e0c3a51-0003-4a00-9000-000000000001",
+      "name": "Chat",
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        0,
+        0
+      ],
+      "webhookId": "5e0c3a51-0003-4a00-9000-0000000000ff"
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "You help publishers find products and affiliate programs with Clickwise. Use only the Clickwise tools. Return every product or program link exactly as the tool gives it: never build, shorten or edit a link. Say that links are affiliate links. If a tool says a key is required, tell the user to add their Clickwise API key."
+        }
+      },
+      "id": "5e0c3a51-0003-4a00-9000-000000000002",
+      "name": "AI Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        240,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "id": "5e0c3a51-0003-4a00-9000-000000000003",
+      "name": "Chat model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        160,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "endpointUrl": "https://partners.clickwise.net/api/v1/mcp",
+        "authentication": "headerAuth",
+        "include": "selected",
+        "includeTools": [
+          "find_affiliate_programs",
+          "search_products",
+          "list_deals"
+        ],
+        "options": {}
+      },
+      "id": "5e0c3a51-0003-4a00-9000-000000000004",
+      "name": "Clickwise MCP",
+      "type": "@n8n/n8n-nodes-langchain.mcpClientTool",
+      "typeVersion": 1.4,
+      "position": [
+        400,
+        220
+      ]
+    }
+  ],
+  "connections": {
+    "Chat": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Chat model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Clickwise MCP": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {}
+}

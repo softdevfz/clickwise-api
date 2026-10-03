@@ -4,7 +4,7 @@
 [![OpenAPI 3.1](https://img.shields.io/badge/OpenAPI-3.1-6ba539)](https://partners.clickwise.net/api/v1/publisher/openapi.json)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
-[Clickwise](https://partners.clickwise.net/developers/) is an affiliate network with an API built for developers and AI agents. Search **1.1M+ products by GTIN** across 7 markets, get product links **tracked to you**, find and join affiliate programs, and pull your conversions. Use it over REST, from an AI agent through **MCP**, or from HasOffers-compatible tools.
+[Clickwise](https://partners.clickwise.net/developers/) is an affiliate network with an API built for developers and AI agents. Search a **multi-store product catalog by GTIN**, get product links **tracked to you**, find and join affiliate programs, and pull your conversions. Use it over REST, from an AI agent through **MCP**, or from HasOffers-compatible tools.
 
 This repo gets you from zero to a working call in under five minutes: quickstarts, thin clients, MCP configs and a deployable affiliate store.
 
@@ -60,7 +60,7 @@ Remote MCP server (Streamable HTTP): **`https://partners.clickwise.net/api/v1/mc
 claude mcp add --transport http clickwise https://partners.clickwise.net/api/v1/mcp --header "X-API-Key: $CLICKWISE_API_KEY"
 ```
 
-Configs for **Claude Code, Cursor, Claude Desktop and VS Code**, plus the tool list, in [`mcp/`](mcp/README.md).
+Configs for **Claude Code, Cursor, Claude Desktop, VS Code and n8n**, plus the tool list, in [`mcp/`](mcp/README.md).
 
 ## 5. Ship an affiliate store
 

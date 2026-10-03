@@ -57,6 +57,10 @@ Copy [`cursor.mcp.json`](cursor.mcp.json) to `.cursor/mcp.json` (project) or `~/
 
 Copy [`vscode.mcp.json`](vscode.mcp.json) to `.vscode/mcp.json`. VS Code asks for the key once and stores it securely.
 
+### n8n
+
+Use n8n's built-in **MCP Client** node (one tool per step) or **MCP Client Tool** node (tools for an AI Agent) with the endpoint above and *HTTP Streamable*. Three importable workflows and a step-by-step guide are in [`n8n/`](n8n/README.md).
+
 ### Any other client
 
 Streamable HTTP, JSON-RPC 2.0, no session required. Send `X-API-Key: <key>` (or `Authorization: Bearer <key>`) for the keyed tools.
