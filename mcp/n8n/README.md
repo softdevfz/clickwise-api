@@ -56,6 +56,7 @@ Import [`clickwise-ai-agent.json`](clickwise-ai-agent.json): **Chat Trigger → 
 | You see | Fix |
 |---|---|
 | `An active affiliate API key is required.` | A keyed tool ran without a valid key. Check the Header Auth credential (header name exactly `X-API-Key`), or use **Bearer Auth** with the same key. A sandbox key covers `search_products` only; the other account tools need your publisher key. |
+| `Product feed access is not active for this affiliate.` | Your account does not have product feed access yet. Ask for it at [partnerships@clickwise.net](mailto:partnerships@clickwise.net) or on the AI line (+1 646 362 1368); the Clickwise team turns it on. The REST API answers the same until it is active. |
 | `catalog_unavailable` | The catalog was busy for a moment. Run the workflow again after a few seconds. |
 | The tool list in the node is empty | Check the endpoint URL and set **Server Transport** to *HTTP Streamable*. |
 | HTTP 429 | You hit the rate limit. Wait and retry. |
