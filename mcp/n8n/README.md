@@ -1,6 +1,6 @@
 # Clickwise in n8n
 
-Use the Clickwise MCP server from [n8n](https://n8n.io) with its built-in MCP nodes. There is no community node to install. Tested on self-hosted n8n 2.41.
+Use the Clickwise MCP server from [n8n](https://n8n.io) with its built-in MCP nodes. There is no community node to install. Tested on self-hosted n8n 2.41: the first two workflows run end to end, and the AI agent one imports cleanly (it needs your own chat model credential to run).
 
 | n8n node | Use it to |
 |---|---|
@@ -25,13 +25,13 @@ Other tools that work without a key: `list_programs`, `list_deals`, `get_deal`, 
 
 ## 2. With your key: products by GTIN with your tracked links
 
-1. Get your publisher API key at <https://partners.clickwise.net/developers/>.
+1. Get a key at <https://partners.clickwise.net/developers/>. To try it first, ask for a free **sandbox key** (no account, 14 days): `search_products` works the same, with example links that never earn. Switch to your **publisher key** to earn from every sale.
 2. Import [`clickwise-products-by-gtin.json`](clickwise-products-by-gtin.json).
 3. Open the **Clickwise: search products** node. Under **Credential**, choose *Create new credential*, then **Header Auth**. Set **Name** to `X-API-Key` and **Value** to your key. n8n stores it encrypted. Never put the key in the workflow JSON.
 4. In **What to search**, set `gtin` (an EAN/UPC) or `text`, and `country` (two-letter code, for example `GB`). Leave unused fields empty.
 5. Execute the workflow.
 
-Each product comes back with `gtin`, `title`, `price`, `currency`, `image`, `url`, `merchant`, `availability`, `country` and `updated_at`. **`url` is your own Clickwise tracked link.** It stays the same between calls for the same product.
+Each product comes back with `gtin`, `title`, `brand`, `category`, `price`, `regular_price`, `currency`, `description`, `size`, `color`, `image`, `url`, `merchant`, `availability`, `country` and `updated_at`. **`url` is your own Clickwise tracked link** (with a sandbox key, an example link). It stays the same between calls for the same product.
 
 Feed the results into whatever comes next: a Google Sheet, a WordPress post, a Telegram or Discord deals bot, or a price-comparison table.
 
@@ -55,6 +55,7 @@ Import [`clickwise-ai-agent.json`](clickwise-ai-agent.json): **Chat Trigger → 
 
 | You see | Fix |
 |---|---|
-| `An active affiliate API key is required.` | A keyed tool ran without a valid publisher key. Check the Header Auth credential (header name exactly `X-API-Key`). You can also use **Bearer Auth** with the same key. |
+| `An active affiliate API key is required.` | A keyed tool ran without a valid key. Check the Header Auth credential (header name exactly `X-API-Key`), or use **Bearer Auth** with the same key. A sandbox key covers `search_products` only; the other account tools need your publisher key. |
+| `catalog_unavailable` | The catalog was busy for a moment. Run the workflow again after a few seconds. |
 | The tool list in the node is empty | Check the endpoint URL and set **Server Transport** to *HTTP Streamable*. |
 | HTTP 429 | You hit the rate limit. Wait and retry. |
