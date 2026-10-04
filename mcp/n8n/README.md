@@ -33,7 +33,7 @@ Other tools that work without a key: `list_programs`, `list_deals`, `get_deal`, 
 
 Each product comes back with `gtin`, `title`, `brand`, `category`, `price`, `regular_price`, `currency`, `description`, `size`, `color`, `image`, `url`, `merchant`, `availability`, `country` and `updated_at`. **`url` is your own Clickwise tracked link** (with a sandbox key, an example link). It stays the same between calls for the same product.
 
-Feed the results into whatever comes next: a Google Sheet, a WordPress post, a Telegram or Discord deals bot, or a price-comparison table.
+Feed the results into whatever comes next: a Google Sheet, a WordPress post, a Telegram or Discord deals bot, or a product table on your site.
 
 ## 3. AI agent with the Clickwise tools
 
@@ -41,7 +41,7 @@ Import [`clickwise-ai-agent.json`](clickwise-ai-agent.json): **Chat Trigger → 
 
 1. Add a credential to **Chat model**. It uses OpenAI by default; any chat model node works.
 2. Add the same Header Auth credential from step 2 to **Clickwise MCP**.
-3. Open the chat and ask, for example: *"Find cordless drills in the UK with my links and make a comparison table."*
+3. Open the chat and ask, for example: *"Find cordless drills in the UK with my links and list them with prices."*
 
 **Tools to Include → Selected** limits the agent to `find_affiliate_programs`, `search_products` and `list_deals` so it stays focused. Add more from the list if you need them. The system message tells the agent to return links exactly as the tools give them.
 

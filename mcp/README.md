@@ -77,5 +77,5 @@ Ask your assistant:
 
 - "Which Clickwise programs fit my sneaker blog for readers in Spain?"
 - "Give me tracked links for the top two programs for my travel newsletter."
-- "Find running shoes in stock in Germany with my Clickwise links and make a comparison table." (needs your key)
+- "Compare prices for this sunscreen across shops in Spain, with my Clickwise links." (needs your key)
 - "How much commission did I earn last month by sub-ID?" (needs your key)
