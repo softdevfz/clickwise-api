@@ -4,7 +4,7 @@
 [![OpenAPI 3.1](https://img.shields.io/badge/OpenAPI-3.1-6ba539)](https://partners.clickwise.net/api/v1/publisher/openapi.json)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
-[Clickwise](https://partners.clickwise.net/developers/) is an affiliate network with an API built for developers and AI agents. Search a **multi-store product catalog by GTIN**, get product links **tracked to you**, find and join affiliate programs, and pull your conversions. Use it over REST, from an AI agent through **MCP**, or from HasOffers-compatible tools.
+[Clickwise](https://partners.clickwise.net/developers/) is an affiliate network with an API built for developers and AI agents. Search **product feeds with GTINs from the networks**, get product links **tracked to you**, find and join affiliate programs, and pull your conversions. Use it over REST, from an AI agent through **MCP**, or from HasOffers-compatible tools.
 
 This repo gets you from zero to a working call in under five minutes: quickstarts, thin clients, MCP configs and a deployable affiliate store.
 
