@@ -19,7 +19,7 @@ Import a workflow in n8n with **Workflows → Import from File**, or paste the J
 
 Import [`clickwise-find-programs.json`](clickwise-find-programs.json) and click **Execute workflow**.
 
-The **MCP Client** node calls `find_affiliate_programs` with a topic, a country and a channel. You get `structuredContent.results`: programs ranked by fit, the reasons for each score, and whether a tracked link can be issued right away. Change the JSON in the node to describe your own site, newsletter or social channel.
+The **MCP Client** node calls `find_affiliate_programs` with a topic, a country and a channel. You get `structuredContent.results`: programs ranked by fit, the reasons for each score, and whether a tracked link can be issued now. Change the JSON in the node to describe your own site, newsletter or social channel.
 
 Other tools that work without a key: `list_programs`, `list_deals`, `get_deal`, `list_news`, `get_news`, `get_catalog_stats` and `request_tracked_links`. The [tool list](../README.md#tools) has the full set.
 

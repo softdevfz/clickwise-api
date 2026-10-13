@@ -10,7 +10,7 @@ Listed in the official MCP Registry as [`net.clickwise/mcp`](https://registry.mo
 |---|---|---|
 | `find_affiliate_programs` | no | Programs that fit a site, app, newsletter or social channel, ranked by fit |
 | `list_programs` | no | Browse and paginate live programs by merchant, category or country |
-| `request_tracked_links` | no | Create a provisional affiliate and return live tracked links right away (email optional) |
+| `request_tracked_links` | no | Create a provisional affiliate and return live tracked links (email optional) |
 | `get_monetization_feed` | no | Same, returned as renderable cards, an HTML embed snippet and JSON |
 | `get_tracked_link_request` | no | Status and links of an earlier `request_tracked_links` call (needs its access secret) |
 | `update_profile` | no | Add claim email and payout method to a no-signup link profile (needs its access secret) |
