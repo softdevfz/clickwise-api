@@ -54,7 +54,7 @@ Runnable versions of steps 1 and 3: [`quickstart/curl.sh`](quickstart/curl.sh) Â
 
 ## 4. Use it from an AI agent (MCP)
 
-Remote MCP server (Streamable HTTP): **`https://partners.clickwise.net/api/v1/mcp`**, listed in the official MCP Registry as `net.clickwise/mcp`. 19 tools; the key is optional (program discovery, deals, catalog stats and instant tracked links work without it).
+Remote MCP server (Streamable HTTP): **`https://partners.clickwise.net/api/v1/mcp`**, listed in the official MCP Registry as `net.clickwise/mcp`. 19 tools; the key is optional (program discovery, deals and catalog stats work without it).
 
 ```sh
 claude mcp add --transport http clickwise https://partners.clickwise.net/api/v1/mcp --header "X-API-Key: $CLICKWISE_API_KEY"

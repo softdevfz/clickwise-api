@@ -2,7 +2,7 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "net.clickwise/mcp",
   "title": "Clickwise Affiliate Network",
-  "description": "Search GTIN products, mint tracked affiliate links, find affiliate programs and deals.",
+  "description": "Affiliate programs, deals and tracked links, plus product search by text or GTIN.",
   "version": "1.4.0",
   "websiteUrl": "https://partners.clickwise.net/developers/",
   "repository": {
@@ -16,7 +16,7 @@
       "headers": [
         {
           "name": "X-API-Key",
-          "description": "Clickwise publisher API key (https://partners.clickwise.net/developers/). Optional: program discovery, deals, catalog stats and instant tracked links work without it; product search, feeds, your links and reports need it.",
+          "description": "Clickwise publisher API key (https://partners.clickwise.net/developers/). Optional: program discovery, deals and catalog stats work without it; product search, feeds, your links and reports need it.",
           "isRequired": false,
           "isSecret": true
         }

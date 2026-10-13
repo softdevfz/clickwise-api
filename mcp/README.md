@@ -13,7 +13,7 @@ Listed in the official MCP Registry as [`net.clickwise/mcp`](https://registry.mo
 | `request_tracked_links` | no | Create a provisional affiliate and return live tracked links right away (email optional) |
 | `get_monetization_feed` | no | Same, returned as renderable cards, an HTML embed snippet and JSON |
 | `get_tracked_link_request` | no | Status and links of an earlier `request_tracked_links` call (needs its access secret) |
-| `update_profile` | no | Add claim email and payout method to an instant-link profile (needs its access secret) |
+| `update_profile` | no | Add claim email and payout method to a no-signup link profile (needs its access secret) |
 | `list_deals` · `get_deal` | no | Current merchant deals and offers, multilingual |
 | `list_news` · `get_news` | no | Program announcements: launches, policy and commission changes |
 | `get_catalog_stats` | no | GTIN catalog counts by market and category |

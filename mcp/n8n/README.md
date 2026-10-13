@@ -25,7 +25,7 @@ Other tools that work without a key: `list_programs`, `list_deals`, `get_deal`, 
 
 ## 2. With your key: products by GTIN with your tracked links
 
-1. Get a key at <https://partners.clickwise.net/developers/>. To try it first, ask for a free **sandbox key** (no account, 14 days): `search_products` works the same, with example links that never earn. Switch to your **publisher key** to earn from every sale.
+1. Get a key at <https://partners.clickwise.net/developers/>. To try it first, ask for a free **sandbox key** (no account, 14 days): `search_products` works the same, with example links that never earn. Switch to your **publisher key** to earn commission on the sales you drive.
 2. Import [`clickwise-products-by-gtin.json`](clickwise-products-by-gtin.json).
 3. Open the **Clickwise: search products** node. Under **Credential**, choose *Create new credential*, then **Header Auth**. Set **Name** to `X-API-Key` and **Value** to your key. n8n stores it encrypted. Never put the key in the workflow JSON.
 4. In **What to search**, set `gtin` (an EAN/UPC) or `text`, and `country` (two-letter code, for example `GB`). Leave unused fields empty.
