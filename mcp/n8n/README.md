@@ -15,7 +15,7 @@ Both take the same settings:
 
 Import a workflow in n8n with **Workflows → Import from File**, or paste the JSON into the canvas.
 
-## 1. No key: find affiliate programs (2 minutes)
+## 1. No key: find affiliate programs
 
 Import [`clickwise-find-programs.json`](clickwise-find-programs.json) and click **Execute workflow**.
 

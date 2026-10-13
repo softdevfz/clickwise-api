@@ -1,4 +1,4 @@
-"""Clickwise in five minutes, with Python 3.8+ (standard library only).
+"""Clickwise quickstart, with Python 3.8+ (standard library only).
 
 Run: python3 quickstart/quickstart.py      (set CLICKWISE_API_KEY for the keyed steps)
 """

@@ -1,4 +1,4 @@
-// Clickwise in five minutes, with Node 18+ (no dependencies).
+// Clickwise quickstart, with Node 18+ (no dependencies).
 // Run: node quickstart/quickstart.mjs      (set CLICKWISE_API_KEY for the keyed steps)
 const BASE = "https://partners.clickwise.net";
 const KEY = process.env.CLICKWISE_API_KEY;

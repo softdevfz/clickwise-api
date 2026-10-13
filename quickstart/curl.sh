@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-# Clickwise in five minutes, with curl. Steps 1-3 need no key.
+# Clickwise quickstart, with curl. Steps 1-3 need no key.
 # Run: sh quickstart/curl.sh            (add CLICKWISE_API_KEY=... to run steps 4-6)
 set -e
 BASE=https://partners.clickwise.net

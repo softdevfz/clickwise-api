@@ -6,9 +6,9 @@
 
 [Clickwise](https://partners.clickwise.net/developers/) is an affiliate network with an API built for developers and AI agents. Search **product feeds with GTINs from the networks**, get product links **tracked to you**, find and join affiliate programs, and pull your conversions. Use it over REST, from an AI agent through **MCP**, or from HasOffers-compatible tools.
 
-This repo gets you from zero to a working call in under five minutes: quickstarts, thin clients, MCP configs and a deployable affiliate store.
+This repo gets you from zero to a working call: quickstarts, thin clients, MCP configs and a deployable affiliate store.
 
-## 1. First call, no key (60 seconds)
+## 1. First call, no key
 
 ```sh
 # How big is the catalog right now?
