@@ -71,6 +71,8 @@ Configs for **Claude Code, Cursor, Claude Desktop, VS Code and n8n**, plus the t
 
 Building with **Lovable, Bolt or v0**? Paste [`templates/affiliate-store/PROMPT.md`](templates/affiliate-store/PROMPT.md).
 
+Running your own app or SaaS? Paste [`templates/merchant-tracking/PROMPT.md`](templates/merchant-tracking/PROMPT.md) into Lovable, Bolt or v0 to add Clickwise sales tracking with Stripe, Lemon Squeezy or the conversions API.
+
 ## 6. Clients
 
 Thin, dependency-free clients generated from the OpenAPI, one method per operation:
