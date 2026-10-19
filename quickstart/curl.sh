@@ -29,6 +29,6 @@ echo "5) Search products with YOUR tracked links"
 curl -s --get "$BASE/api/v1/publisher/products/" -H "X-API-Key: $CLICKWISE_API_KEY" \
   --data-urlencode 'q=sneaker' --data-urlencode 'country=DE' --data-urlencode 'limit=3'; echo
 
-echo "6) Look products up by GTIN (1-100, comma-separated) for fresh price, stock and link"
+echo "6) Look products up by GTIN (1-100, comma-separated) for price, stock and link"
 curl -s --get "$BASE/api/v1/publisher/products/lookup/" -H "X-API-Key: $CLICKWISE_API_KEY" \
   --data-urlencode 'gtins=4006381333931' --data-urlencode 'country=DE'; echo

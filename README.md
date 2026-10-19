@@ -37,7 +37,7 @@ export CLICKWISE_API_KEY=...   # never commit it, never ship it to a browser
 # Who am I, what can this key do, what are my limits?
 curl -s https://partners.clickwise.net/api/v1/publisher/me/ -H "X-API-Key: $CLICKWISE_API_KEY"
 
-# Fresh price, stock and YOUR tracked link for up to 100 GTINs
+# Price, stock and YOUR tracked link for up to 100 GTINs
 curl -s --get https://partners.clickwise.net/api/v1/publisher/products/lookup/ \
   -H "X-API-Key: $CLICKWISE_API_KEY" \
   --data-urlencode 'gtins=4006381333931,5901234123457' --data-urlencode 'country=DE'
