@@ -62,6 +62,8 @@ claude mcp add --transport http clickwise https://partners.clickwise.net/api/v1/
 
 Configs for **Claude Code, Cursor, Claude Desktop, VS Code and n8n**, plus the tool list, in [`mcp/`](mcp/README.md).
 
+Earn commission from your AI assistant (product search, sub-IDs and signed postbacks): [`quickstart/monetize-agent.md`](quickstart/monetize-agent.md).
+
 ## 5. Ship an affiliate store
 
 [`templates/affiliate-store`](templates/affiliate-store): a Next.js storefront that reads products by GTIN, shows live prices and publishes your tracked links. It deploys without a key in preview mode.
