@@ -15,7 +15,7 @@ cw = Clickwise()  # reads CLICKWISE_API_KEY, or Clickwise(api_key=...)
 for p in cw.lookup_products(gtins="4006381333931,5901234123457", country="DE")["products"]:
     print(p["title"], p["price"], p["currency"], p["url"])  # url = your tracked link
 
-page = cw.search_products(q="running shoes", country="ES", limit=20)
+page = cw.search_products(q="sneaker", country="US", limit=20)
 
 link = cw.create_link({"campaign_id": 123, "subid": "post_4711"}, idempotency_key="post-4711")
 print(link["cw_link"])

@@ -4,7 +4,7 @@ Your assistant searches products in one market, shows offers with a tracked link
 
 Same guide as the developers page, where you get the sandbox key: https://partners.clickwise.net/developers/#monetize-agent
 
-1. Try it with a sandbox key (form on the developers page): search with q and country, for example q=headphones and country=GB. Sandbox links are examples and do not track clicks or earn commission, and a sandbox search returns at most 10 offers.
+1. Try it with a sandbox key (form on the developers page): search with q and country, for example q=sneaker and country=GB. Sandbox links are examples and do not track clicks or earn commission, and a sandbox search returns at most 10 offers.
 2. To earn, create a publisher account and use its key. List the programs open to you with GET /api/v1/publisher/programs/joinable/ and apply with POST /api/v1/publisher/programs/apply/; an application is approved or goes to review. A search returns offers only from the programs you are approved in.
 3. Search when the user asks for something: GET /api/v1/publisher/products/?q=<3-200 chars>&country=<ISO-2>, or the MCP tool search_products. Each offer has url, its tracked link, and rules, the program's rules for that offer: follow them.
 4. Tag each conversation: add subid=<your id: up to 36 characters, letters, digits, _ or -, no personal data> to the search. The links come back with it, and a sale made through one of those links reports it in your conversions.
@@ -19,7 +19,7 @@ Same guide as the developers page, where you get the sandbox key: https://partne
 # 1. Search in one market (sandbox key or your publisher key)
 curl --get "https://partners.clickwise.net/api/v1/publisher/products/" \
   -H "X-API-Key: $CLICKWISE_API_KEY" \
-  --data-urlencode "q=headphones" --data-urlencode "country=GB" --data-urlencode "limit=5" \
+  --data-urlencode "q=sneaker" --data-urlencode "country=GB" --data-urlencode "limit=5" \
   --data-urlencode "subid=chat-42"
 
 # 2. Programs you can apply to, and an application (publisher key)

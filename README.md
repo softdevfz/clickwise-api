@@ -45,7 +45,7 @@ curl -s --get https://partners.clickwise.net/api/v1/publisher/products/lookup/ \
 # Search by title in one market
 curl -s --get https://partners.clickwise.net/api/v1/publisher/products/ \
   -H "X-API-Key: $CLICKWISE_API_KEY" \
-  --data-urlencode 'q=running shoes' --data-urlencode 'country=ES' --data-urlencode 'limit=20'
+  --data-urlencode 'q=sneaker' --data-urlencode 'country=US' --data-urlencode 'limit=20'
 ```
 
 Each product comes back as `{"gtin", "title", "price", "currency", "image", "url", "merchant", "availability", ...}`. **`url` is your tracked link**: publish it exactly as returned.

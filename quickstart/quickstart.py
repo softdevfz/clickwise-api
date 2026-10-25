@@ -55,7 +55,7 @@ if not KEY:
 
 try:
     # 4) With key: search products and get YOUR tracked links
-    for p in get_json("/api/v1/publisher/products/", {"q": "sneaker", "country": "DE", "limit": 3}, KEY)["products"]:
+    for p in get_json("/api/v1/publisher/products/", {"q": "sneaker", "country": "US", "limit": 3}, KEY)["products"]:
         print(f"4) {p['gtin']} {p['title']} {p['price']} {p['currency']} -> {p['url']}")
 
     # 5) With key: refresh the sample product by GTIN (omitted if your key cannot sell it)
