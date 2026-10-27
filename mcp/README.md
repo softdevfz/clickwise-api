@@ -57,6 +57,25 @@ Copy [`cursor.mcp.json`](cursor.mcp.json) to `.cursor/mcp.json` (project) or `~/
 
 Copy [`vscode.mcp.json`](vscode.mcp.json) to `.vscode/mcp.json`. VS Code asks for the key once and stores it securely.
 
+### ChatGPT (developer mode)
+
+For ChatGPT Business and Enterprise/Edu workspaces on the web; a workspace admin turns on developer mode first.
+
+1. Plugins → **+** → *Add custom MCP server*.
+2. Name `Clickwise`, URL `https://partners.clickwise.net/api/v1/mcp`.
+3. Authentication: *No authentication* gives the public tools. *OAuth or no authentication* also lets you sign in with your Clickwise affiliate account for the tools that need it (OAuth 2.1 with dynamic client registration).
+4. Review the warning, create it and install it.
+
+Menu names can change: see OpenAI's guide, [Connecting custom MCP servers in ChatGPT](https://help.openai.com/en/articles/12584461).
+
+### Grok
+
+1. Open [grok.com/connectors](https://grok.com/connectors) → *New Connector* → *Custom*.
+2. URL `https://partners.clickwise.net/api/v1/mcp`.
+3. If Grok asks you to sign in, use your Clickwise affiliate account; the public tools work without it.
+
+On Grok Business and Enterprise, an admin adds the connector first. See xAI's guide, [Connectors](https://docs.x.ai/grok/connectors).
+
 ### n8n
 
 Use n8n's built-in **MCP Client** node (one tool per step) or **MCP Client Tool** node (tools for an AI Agent) with the endpoint above and *HTTP Streamable*. Three importable workflows and a step-by-step guide are in [`n8n/`](n8n/README.md).

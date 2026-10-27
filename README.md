@@ -60,7 +60,7 @@ Remote MCP server (Streamable HTTP): **`https://partners.clickwise.net/api/v1/mc
 claude mcp add --transport http clickwise https://partners.clickwise.net/api/v1/mcp --header "X-API-Key: $CLICKWISE_API_KEY"
 ```
 
-Configs for **Claude Code, Cursor, Claude Desktop, VS Code and n8n**, plus the tool list, in [`mcp/`](mcp/README.md).
+Configs for **Claude Code, Cursor, Claude Desktop, VS Code, ChatGPT, Grok and n8n**, plus the tool list, in [`mcp/`](mcp/README.md).
 
 Earn commission from your AI assistant (product search, sub-IDs and signed postbacks): [`quickstart/monetize-agent.md`](quickstart/monetize-agent.md).
 
