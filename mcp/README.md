@@ -97,4 +97,5 @@ Ask your assistant:
 - "Which Clickwise programs fit my sneaker blog for readers in Spain?"
 - "Give me tracked links for the top two programs for my travel newsletter."
 - "Find products with a GTIN in my program feeds, with my Clickwise links." (needs your key)
+- "Find smartwatches sold in Germany, with my Clickwise links." (needs your publisher key)
 - "How much commission did I earn last month by sub-ID?" (needs your key)
