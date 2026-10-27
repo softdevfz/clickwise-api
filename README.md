@@ -45,9 +45,9 @@ curl -s --get https://partners.clickwise.net/api/v1/publisher/products/lookup/ \
 # Search by title in one market
 curl -s --get https://partners.clickwise.net/api/v1/publisher/products/ \
   -H "X-API-Key: $CLICKWISE_API_KEY" \
-  --data-urlencode 'q=sneaker' --data-urlencode 'country=US' --data-urlencode 'limit=20'
+  --data-urlencode 'q=sneaker' --data-urlencode 'country=GB' --data-urlencode 'limit=20'
 
-# Same search in Germany (publisher key; sandbox keys return no results in this market)
+# Same kind of search in Germany (publisher key or sandbox key)
 curl -s --get https://partners.clickwise.net/api/v1/publisher/products/ \
   -H "X-API-Key: $CLICKWISE_API_KEY" \
   --data-urlencode 'q=smartwatch' --data-urlencode 'country=DE' --data-urlencode 'limit=20'

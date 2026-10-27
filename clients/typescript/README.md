@@ -12,7 +12,7 @@ const cw = new Clickwise(); // reads process.env.CLICKWISE_API_KEY, or pass { ap
 const { products } = await cw.lookupProducts({ gtins: "4006381333931,5901234123457", country: "DE" });
 for (const p of products ?? []) console.log(p.title, p.price, p.currency, p.url); // url = your tracked link
 
-const page = await cw.searchProducts({ q: "sneaker", country: "US", limit: 20 });
+const page = await cw.searchProducts({ q: "sneaker", country: "GB", limit: 20 });
 
 const link = await cw.createLink({ campaign_id: 123, subid: "post_4711" }, { idempotencyKey: "post-4711" });
 console.log(link.cw_link);

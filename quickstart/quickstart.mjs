@@ -44,7 +44,7 @@ if (!KEY) {
 }
 
 // 4) With key: search products and get YOUR tracked links
-const found = await getJson("/api/v1/publisher/products/", { key: KEY, params: { q: "sneaker", country: "US", limit: "3" } });
+const found = await getJson("/api/v1/publisher/products/", { key: KEY, params: { q: "sneaker", country: "GB", limit: "3" } });
 for (const p of found.products) console.log(`4) ${p.gtin} ${p.title} ${p.price} ${p.currency} -> ${p.url}`);
 
 // 5) With key: refresh the sample product by GTIN (omitted if your key cannot sell it)
