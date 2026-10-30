@@ -27,6 +27,16 @@ Listed in the official MCP Registry as [`net.clickwise/mcp`](https://registry.mo
 
 `tools/list` is the source of truth for current tools and argument schemas.
 
+### Partial product feeds
+
+`get_product_feed` still returns a working feed when a few rows cannot carry your tracked link. In that case the response adds `catalog_warning`, and `products` counts only the rows that are in the feed:
+
+```json
+"catalog_warning": {"code": "partial_catalog", "skipped_rows": 3, "reasons": {"<reason_code>": 3}}
+```
+
+`reasons` gives a count per fixed reason code. A complete feed has no `catalog_warning`.
+
 ## Connect
 
 The key is optional: without it you get every public tool. Get one at <https://partners.clickwise.net/developers/>. Never commit it; every config below reads it from the environment or asks for it.
