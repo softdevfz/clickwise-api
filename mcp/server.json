@@ -2,8 +2,8 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "net.clickwise/mcp",
   "title": "Clickwise Affiliate Network",
-  "description": "Affiliate programs, deals and tracked links, plus product search by text or GTIN.",
-  "version": "1.4.0",
+  "description": "Affiliate programs, deals, tracked links and product search, plus merchant program setup tools.",
+  "version": "1.7.1",
   "websiteUrl": "https://partners.clickwise.net/developers/",
   "repository": {
     "url": "https://github.com/softdevfz/clickwise-api",
@@ -16,7 +16,13 @@
       "headers": [
         {
           "name": "X-API-Key",
-          "description": "Clickwise publisher API key (https://partners.clickwise.net/developers/). Optional: program discovery, deals and catalog stats work without it; product search, feeds, your links and reports need it.",
+          "description": "Clickwise API key, optional. Program discovery, deals, catalog stats and tracked links work without it. Product search and GTIN lookup work with a free 14-day sandbox key that needs no account, from the Developers page (websiteUrl). Feeds, your links and reports need your publisher key.",
+          "isRequired": false,
+          "isSecret": true
+        },
+        {
+          "name": "Authorization",
+          "description": "Merchant Bearer token, optional. Only the merchant tools that say \"Merchant Bearer token required\" use it: tracking test link, conversions key, integration status and results. The account gets it once, from get_merchant_credentials.",
           "isRequired": false,
           "isSecret": true
         }
@@ -25,7 +31,7 @@
   ],
   "_meta": {
     "io.modelcontextprotocol.registry/publisher-provided": {
-      "publisher": "SOFT DEV FZ LLC / Clickwise",
+      "publisher": "Clickwise",
       "openapi": "https://partners.clickwise.net/api/v1/publisher/openapi.json",
       "llmsTxt": "https://partners.clickwise.net/llms.txt",
       "privacyPolicyUrl": "https://partners.clickwise.net/en/privacy/"

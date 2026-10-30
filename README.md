@@ -127,4 +127,4 @@ Questions and integration help: **partnerships@clickwise.net**. Bugs in this rep
 
 ## License
 
-[MIT](LICENSE) © SOFT DEV FZ LLC (Clickwise). Use of the Clickwise API itself is subject to your Clickwise publisher account terms.
+[MIT](LICENSE). Use of the Clickwise API itself is subject to your Clickwise publisher account terms.
