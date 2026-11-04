@@ -1,0 +1,11 @@
+{
+  "name": "clickwise",
+  "version": "1.0.0",
+  "description": "Clickwise affiliate network: find programs, deals and products and get tracked links from Gemini CLI.",
+  "mcpServers": {
+    "clickwise": {
+      "httpUrl": "https://partners.clickwise.net/api/v1/mcp"
+    }
+  },
+  "contextFileName": "GEMINI.md"
+}

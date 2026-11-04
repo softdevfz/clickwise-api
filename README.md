@@ -59,11 +59,24 @@ Runnable versions of steps 1 and 3: [`quickstart/curl.sh`](quickstart/curl.sh) Â
 
 ## 4. Use it from an AI agent (MCP)
 
-Remote MCP server (Streamable HTTP): **`https://partners.clickwise.net/api/v1/mcp`**, listed in the official MCP Registry as `net.clickwise/mcp`. 19 tools; the key is optional (program discovery, deals and catalog stats work without it).
+Remote MCP server (Streamable HTTP): **`https://partners.clickwise.net/api/v1/mcp`**, listed in the official MCP Registry as `net.clickwise/mcp`. The key is optional: program discovery, deals, catalog stats and provisional tracked links work without it.
 
 ```sh
+# Claude Code
 claude mcp add --transport http clickwise https://partners.clickwise.net/api/v1/mcp --header "X-API-Key: $CLICKWISE_API_KEY"
+
+# OpenAI Codex CLI
+codex mcp add clickwise --url https://partners.clickwise.net/api/v1/mcp
+
+# Gemini CLI
+gemini mcp add --transport http clickwise https://partners.clickwise.net/api/v1/mcp
 ```
+
+### Plugins, extensions and skills
+
+- **Claude Code plugin** (MCP server plus the skill below): `/plugin marketplace add softdevfz/clickwise-api`, then `/plugin install clickwise@clickwise`. Set `CLICKWISE_API_KEY` in your environment to use the tools that need a key.
+- **Gemini CLI extension**: `gemini extensions install https://github.com/softdevfz/clickwise-api`. It adds the MCP server and [`GEMINI.md`](GEMINI.md) as context.
+- **Agent Skill** for any agent that reads `SKILL.md` (Claude, Codex and others): [`skills/clickwise-affiliate-links`](skills/clickwise-affiliate-links/SKILL.md). Copy the folder into your agent's skills directory.
 
 Configs for **Claude Code, Cursor, Claude Desktop, VS Code, ChatGPT, Grok and n8n**, plus the tool list, in [`mcp/`](mcp/README.md).
 

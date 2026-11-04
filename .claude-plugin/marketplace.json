@@ -1,0 +1,15 @@
+{
+  "name": "clickwise",
+  "owner": {
+    "name": "Clickwise",
+    "email": "partnerships@clickwise.net"
+  },
+  "plugins": [
+    {
+      "name": "clickwise",
+      "source": "./",
+      "description": "Remote MCP server and skill for the Clickwise affiliate network: programs, deals, products by GTIN and tracked links.",
+      "category": "productivity"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "clickwise",
+  "version": "1.0.0",
+  "description": "Clickwise affiliate network in Claude Code: the remote MCP server plus a skill to find programs, deals and products and return tracked links.",
+  "author": {
+    "name": "Clickwise",
+    "email": "partnerships@clickwise.net",
+    "url": "https://partners.clickwise.net/developers/"
+  },
+  "homepage": "https://partners.clickwise.net/developers/",
+  "repository": "https://github.com/softdevfz/clickwise-api",
+  "license": "MIT",
+  "keywords": [
+    "affiliate",
+    "affiliate-links",
+    "mcp",
+    "gtin",
+    "product-feed",
+    "monetization"
+  ],
+  "privacyPolicyUrl": "https://partners.clickwise.net/privacy/"
+}
