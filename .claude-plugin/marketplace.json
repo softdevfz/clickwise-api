@@ -11,5 +11,8 @@
       "description": "Remote MCP server and skill for the Clickwise affiliate network: programs, deals, products by GTIN and tracked links.",
       "category": "productivity"
     }
-  ]
+  ],
+  "metadata": {
+    "description": "Clickwise affiliate network plugins: remote MCP server and agent skill."
+  }
 }
