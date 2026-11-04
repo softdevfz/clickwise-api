@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "clickwise": {
+      "serverUrl": "https://partners.clickwise.net/api/v1/mcp"
+    }
+  }
+}

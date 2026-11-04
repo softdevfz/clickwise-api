@@ -1,0 +1,6 @@
+{
+  "name": "clickwise",
+  "version": "1.0.0",
+  "description": "Clickwise affiliate network: the remote MCP server plus a skill to find programs, deals and products and return tracked links.",
+  "skills": "./skills/"
+}
