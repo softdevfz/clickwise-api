@@ -3,7 +3,7 @@
   "name": "net.clickwise/mcp",
   "title": "Clickwise Affiliate Network",
   "description": "Affiliate programs, deals, tracked links and product search, plus merchant program setup tools.",
-  "version": "1.7.1",
+  "version": "1.8.0",
   "websiteUrl": "https://partners.clickwise.net/developers/",
   "repository": {
     "url": "https://github.com/softdevfz/clickwise-api",
