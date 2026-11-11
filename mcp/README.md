@@ -109,3 +109,14 @@ Ask your assistant:
 - "Find products with a GTIN in my program feeds, with my Clickwise links." (needs your key)
 - "Find smartwatches sold in Germany, with my Clickwise links." (publisher key or sandbox key)
 - "How much commission did I earn last month by sub-ID?" (needs your key)
+
+## Directory listing
+
+The text we use when a directory or marketplace lists this server.
+
+- **Name:** Clickwise
+- **Short description:** Affiliate programs, deals, tracked links and product search.
+- **Description:** Clickwise is an affiliate network with a remote MCP server and a REST API. With this server an agent can find affiliate programs that fit a site or channel, list current deals and create tracked affiliate links; with an API key it can also search products by GTIN or title. Program discovery and deals work without a key. Commission rates and terms are shown for each program. Links returned by these tools are affiliate links: if someone buys through them, the publisher who shares them may receive a commission from the store.
+- **Server (Streamable HTTP, no key):** `https://partners.clickwise.net/api/v1/mcp`
+- **Icon:** [`assets/icon.png`](../assets/icon.png)
+- **Contact:** partnerships@clickwise.net
