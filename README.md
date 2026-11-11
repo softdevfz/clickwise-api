@@ -77,6 +77,7 @@ gemini mcp add --transport http clickwise https://partners.clickwise.net/api/v1/
 - **Claude Code plugin** (MCP server plus the skill below): `/plugin marketplace add softdevfz/clickwise-api`, then `/plugin install clickwise@clickwise`. Set `CLICKWISE_API_KEY` in your environment to use the tools that need a key.
 - **Codex plugin** (same MCP server and skill): `codex plugin marketplace add softdevfz/clickwise-api`, then `codex plugin add clickwise@clickwise`. The key, if set, is read from `CLICKWISE_API_KEY`.
 - **Antigravity CLI plugin**: `agy plugin install https://github.com/softdevfz/clickwise-api`.
+- **Kimi Code CLI plugin** (same MCP server and skill): `/plugins install https://github.com/softdevfz/clickwise-api`, then `/reload`. It connects without a key; for the tools that need one, add the server to your Kimi Code MCP config with `"bearerTokenEnvVar": "CLICKWISE_API_KEY"`.
 - **Gemini CLI extension**: `gemini extensions install https://github.com/softdevfz/clickwise-api`. It adds the MCP server and [`GEMINI.md`](GEMINI.md) as context.
 - **Agent Skill** for any agent that reads `SKILL.md` (Claude, Codex and others): [`skills/clickwise-affiliate-links`](skills/clickwise-affiliate-links/SKILL.md). Copy the folder into your agent's skills directory.
 
