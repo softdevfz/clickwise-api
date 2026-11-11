@@ -13,7 +13,7 @@ Listed in the official MCP Registry as [`net.clickwise/mcp`](https://registry.mo
 | `request_tracked_links` | no | Create a provisional affiliate and return live tracked links (email optional) |
 | `get_monetization_feed` | no | Same, returned as renderable cards, an HTML embed snippet and JSON |
 | `get_tracked_link_request` | no | Status and links of an earlier `request_tracked_links` call (needs its access secret) |
-| `update_profile` | no | Add claim email and payout method to a no-signup link profile (needs its access secret) |
+| `update_profile` | no | Add claim email and payout method to a provisional link profile (needs its access secret) |
 | `list_deals` · `get_deal` | no | Current merchant deals and offers, multilingual |
 | `list_news` · `get_news` | no | Program announcements: launches, policy and commission changes |
 | `get_catalog_stats` | no | GTIN catalog counts by market and category |
@@ -41,6 +41,8 @@ Listed in the official MCP Registry as [`net.clickwise/mcp`](https://registry.mo
 
 The key is optional: without it you get every public tool. Get one at <https://partners.clickwise.net/developers/>. Never commit it; every config below reads it from the environment or asks for it.
 
+Links returned by these tools are affiliate links: if someone buys through them, the publisher who shares them may receive a commission from the store.
+
 ### Claude Code
 
 ```sh
@@ -56,7 +58,15 @@ Or commit [`claude-code.mcp.json`](claude-code.mcp.json) as `.mcp.json` in your 
 
 ### Cursor
 
-Copy [`cursor.mcp.json`](cursor.mcp.json) to `.cursor/mcp.json` (project) or `~/.cursor/mcp.json` (global) and export `CLICKWISE_API_KEY` before starting Cursor.
+[![Add to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/install-mcp?name=clickwise&config=eyJ1cmwiOiJodHRwczovL3BhcnRuZXJzLmNsaWNrd2lzZS5uZXQvYXBpL3YxL21jcCJ9)
+
+The button adds the server without a key (public tools). Cursor asks you to confirm before it installs it. For the tools that need a key, copy [`cursor.mcp.json`](cursor.mcp.json) to `.cursor/mcp.json` (project) or `~/.cursor/mcp.json` (global) and export `CLICKWISE_API_KEY` before starting Cursor.
+
+### Replit (Agent)
+
+[![Add to Replit](https://replit.com/badge?caption=Add%20to%20Replit)](https://replit.com/integrations?mcp=eyJkaXNwbGF5TmFtZSI6IkNsaWNrd2lzZSIsImJhc2VVcmwiOiJodHRwczovL3BhcnRuZXJzLmNsaWNrd2lzZS5uZXQvYXBpL3YxL21jcCJ9)
+
+The button adds the server to your Replit account without a key (public tools), and Replit asks you to authorize it. To add it by hand: Integrations → MCP Servers → add a server with the URL `https://partners.clickwise.net/api/v1/mcp`. For the tools that need a key, add the header `X-API-Key` with your key.
 
 ### Claude Desktop
 
@@ -85,6 +95,26 @@ Menu names can change: see OpenAI's guide, [Connecting custom MCP servers in Cha
 3. If Grok asks you to sign in, use your Clickwise affiliate account; the public tools work without it.
 
 On Grok Business and Enterprise, an admin adds the connector first. See xAI's guide, [Connectors](https://docs.x.ai/grok/connectors).
+
+### Bolt
+
+1. Connectors → *Custom MCP server*.
+2. URL `https://partners.clickwise.net/api/v1/mcp`, transport Streamable HTTP.
+3. Authentication: *None* gives the public tools. You can turn the connector on for all your projects.
+
+### v0
+
+1. *Add MCP* in the prompt form, or in MCP Connections.
+2. URL `https://partners.clickwise.net/api/v1/mcp`.
+3. Authentication: *No Auth* gives the public tools. For the tools that need a key, choose *Custom Headers* with `X-API-Key` and your key, or *Bearer* with your key.
+
+### Lovable
+
+1. Connectors → *Add custom* → *MCP server*, with the URL `https://partners.clickwise.net/api/v1/mcp`. If *MCP server* is grayed out, a workspace admin has turned custom MCP servers off.
+2. Authentication: *No authentication* gives the public tools. For the tools that need a key, choose *Bearer token or API key* and paste your key.
+3. In Lovable, an MCP server gives context to the chat while you build. It is not part of your published app. To show products and tracked links in the published app, the app calls the REST API from its server code: paste [`templates/affiliate-store/PROMPT.md`](../templates/affiliate-store/PROMPT.md) to set that up.
+
+Menu names in Bolt, v0 and Lovable can change: check each tool's own guide for custom MCP servers.
 
 ### n8n
 
